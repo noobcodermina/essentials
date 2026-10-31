@@ -1,0 +1,44 @@
+@import '@fontsource-variable/geist-mono';
+
+:root {
+	--bg: #f1f1f1;
+
+	--light: #fff;
+
+	--text: #111111;
+	--text-light: #555555;
+
+	--accent: #6fa8f8;
+
+	--border: 1px solid #e2e0e0;
+
+	--shadow: rgba(0, 0, 0, 0.1) 0px 0px 3px 0px;
+
+	--highlight: #c2c2c2;
+}
+
+* {
+	font-family: 'Geist Mono Variable', monospace;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-size: 20px 20px;
+	background-image:
+		linear-gradient(to right, hsl(0, 0%, 97%) 1px, transparent 1px),
+		linear-gradient(to bottom, hsl(0, 0%, 97%) 1px, transparent 1px);
+}
+
+p,
+span,
+a,
+i,
+b {
+	font-size: 0.9rem;
+}
+
+p {
+	color: var(--text);
+}
