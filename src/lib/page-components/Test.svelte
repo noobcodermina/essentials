@@ -1,15 +1,24 @@
 <script>
+	import { setContext } from 'svelte';
 	let content = $state([
-		{ name: '111', content: '1' },
-		{ name: '2', content: '2' },
-		{ name: '3', content: '3' }
+		{ name: 'kralj', content: '1' },
+		{ name: 'jason', content: '2' },
+		{ name: 'stake', content: '3' }
 	]);
 
-	let searchQuery = $state('');
+	let splitedContent = $state([]);
 
-	$effect(() => {
-		console.log(searchQuery.includes(content[0].name));
-	});
+	let searchQuery = $state('');
+	setContext('searchQuery', () => searchQuery);
+
+	for (let i = 0; i < content.length; i++) {
+		splitedContent.push(content[i].name.split(''));
+		console.log(splitedContent);
+
+		if (searchQuery.includes(splitedContent[0])) {
+			console.log('ima');
+		}
+	}
 </script>
 
 <input type="text" bind:value={searchQuery} />
